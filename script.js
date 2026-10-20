@@ -96,3 +96,64 @@ if ("IntersectionObserver" in window) {
 } else {
   revealItems.forEach(item => item.classList.add("is-visible"));
 }
+
+// SAN Ultra 3D: smoother pointer tilt, magnetic glow, and click-to-charge effect.
+if (heroArt && logoStage && logoDisc) {
+  const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  let targetX = 0;
+  let targetY = 0;
+  let framePending = false;
+
+  function renderLogoTilt() {
+    const tiltX = targetX * 11;
+    const tiltY = targetY * 10;
+    logoStage.style.transform = `translate3d(${targetX * 12}px, ${targetY * 9}px, 0) rotateY(${tiltX}deg) rotateX(${-tiltY}deg)`;
+    logoDisc.style.transform = `rotateX(${9 - tiltY}deg) rotateY(${-15 + tiltX}deg) translateZ(2px)`;
+    framePending = false;
+  }
+
+  if (canTilt) {
+    heroArt.addEventListener('pointermove', (event) => {
+      const rect = heroArt.getBoundingClientRect();
+      targetX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      targetY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+      if (!framePending) {
+        framePending = true;
+        window.requestAnimationFrame(renderLogoTilt);
+      }
+    }, { passive: true });
+
+    heroArt.addEventListener('pointerleave', () => {
+      targetX = 0;
+      targetY = 0;
+      logoStage.style.transform = '';
+      logoDisc.style.transform = '';
+    });
+  }
+
+  function makeLogoSparks() {
+    const rect = heroArt.getBoundingClientRect();
+    for (let i = 0; i < 12; i++) {
+      const spark = document.createElement('span');
+      const angle = (Math.PI * 2 * i) / 12;
+      const distance = 35 + Math.random() * 65;
+      spark.className = 'logo-spark';
+      spark.style.left = `${rect.width / 2}px`;
+      spark.style.top = `${rect.height / 2}px`;
+      spark.style.setProperty('--spark-x', `${Math.cos(angle) * distance}px`);
+      spark.style.setProperty('--spark-y', `${Math.sin(angle) * distance}px`);
+      heroArt.appendChild(spark);
+      spark.addEventListener('animationend', () => spark.remove(), { once: true });
+    }
+  }
+
+  heroArt.addEventListener('click', (event) => {
+    // Don't trigger the logo effect when clicking links or other controls in this area.
+    if (event.target.closest('a, button')) return;
+    logoDisc.classList.remove('is-charged');
+    void logoDisc.offsetWidth;
+    logoDisc.classList.add('is-charged');
+    makeLogoSparks();
+    window.setTimeout(() => logoDisc.classList.remove('is-charged'), 1100);
+  });
+}

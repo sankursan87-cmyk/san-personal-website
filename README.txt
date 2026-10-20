@@ -1,29 +1,27 @@
-SAN — PERSONAL UNIVERSE (PREMIUM MOTION UPDATE)
+SAN — ULTRA 3D LOGO UPGRADE
 
-Isi folder:
-- index.html  : struktur dan teks website
-- style.css   : desain, responsif, dan animasi
-- script.js   : menu, animasi interaktif, efek scroll, dan musik
-- music.mp3   : opsional; tambahkan musik milik sendiri jika ingin memakai tombol musik
+Isi paket:
+- index.html
+- style.css
+- script.js
+- README.txt
 
-FITUR UPDATE
-- Efek 3D logo SAN merespons gerakan mouse di komputer
-- Garis progress neon saat scroll
-- Cahaya ambient mengikuti pointer di komputer
-- Animasi elemen masuk saat discroll
-- Efek cahaya tambahan pada logo dan kartu
-- Tetap responsif untuk HP dan mendukung pengaturan reduced motion
+Cara update GitHub Pages:
+1. Ekstrak ZIP ini di laptop.
+2. Buka repository GitHub website SAN.
+3. Masuk tab Code > Add file > Upload files.
+4. Upload index.html, style.css, dan script.js dari folder ini langsung ke root repository (jangan taruh dalam subfolder).
+5. Jika GitHub menanyakan overwrite/replace, setujui untuk mengganti file lama.
+6. Klik Commit changes.
+7. Tunggu 1–3 menit, buka website lalu tekan Ctrl + F5.
 
-CARA UPDATE DI GITHUB
-1. Buka repository GitHub yang dipakai untuk website ini.
-2. Buka tab Code.
-3. Klik Add file > Upload files.
-4. Buka folder ini di komputer dan pilih index.html, style.css, script.js (boleh pilih README.txt juga).
-5. Upload ke folder utama repository (root), bukan ke folder baru.
-6. Pilih Commit changes.
-7. Tunggu 1–3 menit, lalu buka website dan tekan Ctrl+F5.
+Efek baru:
+- Logo bereaksi terhadap gerakan mouse pada laptop/desktop.
+- Efek neon dan kedalaman 3D lebih kuat.
+- Klik area logo untuk efek charge dan partikel cahaya.
+- Di perangkat sentuh, animasi dasar tetap berjalan; gerakan mouse tidak diperlukan.
 
-PENTING
-- Jangan menghapus atau membuat folder baru untuk file website. Tiga file harus berada di tempat yang sama di root repository.
-- Tautan sosial dan email pada halaman masih contoh; ganti di index.html dengan tautan milik sendiri sebelum dipakai publik.
-- Musik tidak disertakan. Jika ingin musik, tambahkan file musik yang boleh digunakan dan beri nama music.mp3.
+Catatan:
+- Tetap gunakan file musik music.mp3 milik sendiri bila ingin mengaktifkan tombol musik.
+- Jangan hapus atau ubah pengaturan GitHub Pages.
+- Upload tiga file utama ke folder root yang sama dengan versi website sebelumnya.
