@@ -10,6 +10,8 @@
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
   <header class="topbar">
     <a class="brand" href="#home" aria-label="SAN beranda">
       <span class="brand-mark">S<span>A</span>N</span>
@@ -40,11 +42,11 @@
           <div><span class="meta-number">SAN</span><span class="meta-label">BUILT DIFFERENT</span></div>
         </div>
       </div>
-      <div class="hero-art" aria-label="Logo SAN tiga dimensi animasi">
+      <div class="hero-art" id="heroArt" aria-label="Logo SAN tiga dimensi animasi">
         <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
         <div class="energy energy-one"></div><div class="energy energy-two"></div>
-        <div class="logo-stage">
-          <div class="logo-disc">
+        <div class="logo-stage" id="logoStage">
+          <div class="logo-disc" id="logoDisc">
             <div class="logo-face"><span>S</span><span class="logo-a">A</span><span>N</span></div>
             <div class="logo-light"></div>
           </div>
@@ -103,7 +105,7 @@
           <div class="work-info"><div><h3>Motion Playground</h3><p>Animasi, efek & eksperimen digital</p></div><span class="arrow-circle">↗</span></div>
         </article>
       </div>
-      <p class="editable-note">Kartu ini masih contoh desain. Ganti visual dan deskripsinya dengan karya asli lu saat siap.</p>
+      <p class="editable-note">Kartu ini adalah showcase awal. Ganti visual dan deskripsinya dengan karya asli lu saat siap.</p>
     </section>
 
     <section class="section-wrap section social" id="social">
